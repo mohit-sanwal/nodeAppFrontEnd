@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+@import "materialize/materialize.scss";
+@import "node-waves/src/scss/waves.scss";
+
+html,
+body,
+#app {
+  height: 100%;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  user-select: none;
+  
+}
+body {
+  background: #16154F;
+  color: #fff;
+}
+body.white {
+  background: #fff;
+  color: #000;
+}
+body.profile {
+  background: #0c0b36;
+  color: #fff;
+}
+#app.modal-blur {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+.noScroll {
+  overflow: hidden;
+}
+
+body.noScroll #app {
+  overflow: hidden;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+.no-padding {
+  padding: 0 !important;
+}
+
+.accent-color {
+  background-color: #ff2a71 !important;
+}
+.accent-color-text {
+  color: #ff2a71 !important;
+}
+
+// shared styles
+.btn,
+.btn-flat {
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  //   height: 36px;
+  //   line-height: 36px;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 16px;
+  //   text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Disabled shared style
+.btn.disabled,
+.btn-floating.disabled,
+.btn-large.disabled,
+.btn-small.disabled,
+.btn-flat.disabled,
+.btn:disabled,
+.btn-floating:disabled,
+.btn-large:disabled,
+.btn-small:disabled,
+.btn-flat:disabled,
+.btn[disabled],
+.btn-floating[disabled],
+.btn-large[disabled],
+.btn-small[disabled],
+.btn-flat[disabled] {
+  pointer-events: none;
+  background-color: #ccc !important;
+  box-shadow: none;
+  color: #fff !important;
+  cursor: default;
+  &:hover {
+    background-color: #ccc !important;
+    color: #fff !important;
+  }
+}
+
+// Shared icon styles
+.btn,
+.btn-floating,
+.btn-large,
+.btn-small,
+.btn-flat {
+  font-size: 14px;
+  outline: 0;
+  i {
+    font-size: 1.3rem;
+    line-height: inherit;
+  }
+}
+
+// Shared focus button style
+.btn,
+.btn-floating {
+  &:focus {
+    background-color: #1d7d74;
+  }
+}
+
+// Raised Button
+.btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: 0.5px;
+  //   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+  //     0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #2bbbad;
+  }
+}
+
+// Flat button
+.btn-flat {
+  box-shadow: none;
+  background-color: transparent;
+  color: #343434;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:focus,
+  &:hover {
+    box-shadow: none;
+  }
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  &.disabled,
+  &.btn-flat[disabled] {
+    background-color: transparent !important;
+    color: #b3b2b2 !important;
+    cursor: default;
+  }
+}
+
+.btn-round {
+    border-radius: 22px;
+}
+
+// Block button
+.btn-block {
+  display: inline-block;
+  width: 100%;
+}
+
+.btn-small {
+  height: 32.4px;
+  line-height: 32.4px;
+  font-size: 14px;
+}
+
+.btn.accent-color:disabled {
+  background-color: #f9b4cb !important;
+}
+
+// navbar css
+.navbar-fixed {
+  position: relative;
+  height: 52px;
+  z-index: 997;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.navbar-fixed nav {
+  position: fixed;
+}
+
+.nav-hideable {
+  top: 0;
+  transition: top .2s ease-in-out;
+}
+
+nav {
+  height: 52px;
+  line-height: 52px;
+  background: #131246;
+  width: 100%;
+}
+nav, nav a {
+  color: #fff;
+}
+
+nav .nav-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+nav .btn-back, nav .btn-menu, nav .page-title {
+  padding: 0 12px;
+  height: 52px;
+  line-height: 52px;
+}
+nav .btn-menu {
+  padding: 0 24px 0 0;
+}
+
+nav .page-title {
+  font-size: 16px;
+}
+
+ul:not(.browser-default) {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+nav ul {
+  margin: 0;
+}
+
+ul:not(.browser-default) li {
+  list-style-type: none;
+}
+
+nav ul li {
+  transition: background-color .3s;
+  float: left;
+  padding: 0;
+}
+
+nav ul a {
+  transition: background-color .3s;
+  font-size: 1rem;
+  color: #fff;
+  display: block;
+  padding: 6px 15px;
+  cursor: pointer;
+}
+
+nav ul a img {
+  display: block;
+}

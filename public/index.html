@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title></title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: {
+          families: ["Roboto:300,400,500,700", "Roboto Condensed:300,400,500"]
+        }
+      };
+      (function() {
+        var wf = document.createElement("script");
+        wf.src =
+          ("https:" == document.location.protocol ? "https" : "http") +
+          "://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js";
+        wf.type = "text/javascript";
+        wf.async = "true";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+      // ]]>
+    </script>
+    <style type="text/css">
+      .landscape {
+        display: none;
+      }
+      .rotate {
+        background: url("/static/img/landscape.png");
+        height: 100px;
+        width: 100px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 480px) and (max-width: 768px) and (orientation: landscape) {
+        html,
+        body {
+          overflow: hidden;
+        }
+        .landscape {
+          display: block;
+          background: #16154F;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          z-index: 1001;
+          text-align: center;
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>
+        We're sorry but BaaziNow doesn't work properly without JavaScript
+        enabled. Please enable it to continue.
+      </strong>
+    </noscript>
+    <div id="app"></div>
+    <div class="landscape">
+      <div class="valign-wrapper">
+        <div class="valign">
+          <div style="padding: 0 80px">
+            <!-- <div class="rotate"></div> -->
+            <h2 class="light">Please rotate your device</h2>
+            <span>
+              We don't support landscape mode. Rotate your device to portrait
+              mode for the best experience
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  </body>
+</html>
