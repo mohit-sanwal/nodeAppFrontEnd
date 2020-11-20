@@ -4,6 +4,5 @@
 .env.production
 .env.qa
 .env.staging
-.eslintrc.js
 documents
 node_modules/
