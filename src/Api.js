@@ -1,6 +1,6 @@
 import axios from "axios";
 import store from "./store";
-
+import * as Config from "./config"
 export default class Api {
     static init() {
         const ignoredUrls = [`${process.env.VUE_APP_RESOURCE_CONFIG_URL}`, `${process.env.VUE_APP_TODAY_BRAINORPOLL_WINNER_URL}`, `${process.env.VUE_APP_TODAY_BINGO_WINNER_URL}`];
@@ -47,7 +47,7 @@ export default class Api {
     }
 
     static login(data, success, failure) {
-        axios.post(`http://localhost:3000/users/login`, data).then(
+        axios.post(`${Config.BASE_URL}/users/login`, data).then(
             (response) => {
                 if (response.data.tokens) {
                         store.dispatch("loggedIn", response.data);
@@ -65,7 +65,7 @@ export default class Api {
     }
 
     static register(data, success, failure) {
-        axios.post(`http://localhost:3000/users/register`, data).then(
+        axios.post(`${Config.BASE_URL}/users/register`, data).then(
             (response) => {
                 if (response.data.tokens) {
                     if (response.data.tokens[0].token) {
@@ -86,7 +86,7 @@ export default class Api {
 
     static addStory(data, config, success, failure) {
         // axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
-        axios.post(`http://localhost:3000/add-post`, data, config).then(
+        axios.post(`${Config.BASE_URL}/add-post`, data, config).then(
             (response) => {
                 if (success) {
                     success(response);
@@ -101,7 +101,7 @@ export default class Api {
     }
 
     static getAllUsers(success, failure) {
-        axios.get(`http://localhost:3000/users`).then(
+        axios.get(`${Config.BASE_URL}/users`).then(
             (response) => {
                 if (success) {
                     success(response);
@@ -116,7 +116,7 @@ export default class Api {
     }
 
     static getUserDetails(id, success, failure) {
-        axios.get(`http://localhost:3000/userDetails/${id}`).then(
+        axios.get(`${Config.BASE_URL}/userDetails/${id}`).then(
             (response) => {
                 if (success) {
                     success(response);
@@ -131,7 +131,7 @@ export default class Api {
     }
 
     static getAllPost(success, failure) {
-        axios.get(`http://localhost:3000/all-posts`).then(
+        axios.get(`${Config.BASE_URL}/all-posts`).then(
             (response) => {
                 if (success) {
                     success(response);
@@ -146,7 +146,7 @@ export default class Api {
     }
 
     static getMyPost(id, success, failure) {
-        axios.get(`http://localhost:3000/my-post/${id}`).then(
+        axios.get(`${Config.BASE_URL}/my-post/${id}`).then(
             (response) => {
                 if (success) {
                     success(response);
